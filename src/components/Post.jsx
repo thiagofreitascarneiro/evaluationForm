@@ -25,6 +25,8 @@ export function Post({ author, publishedAt, content}) {
         addSuffix: true,
     })
 
+    const isNewCommentempty = newCommentText.lenght === 0;
+
     function handleCreateNewComment() {
         event.preventDefault()
         
@@ -87,7 +89,7 @@ export function Post({ author, publishedAt, content}) {
                     required
                 />
                 <footer>
-                    <button type="submit">Comentar</button>
+                    <button type="submit" disabled={isNewCommentempty}>Comentar</button>
                 </footer>
                 
             </form>
